@@ -5,21 +5,31 @@
  */
 package ttt;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jeriabegglen
  */
 public class TicTacToe extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TicTacToe
-     */
+    private String whoseTurn = "X";
+    
     public TicTacToe() {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
     }
-
+    
+private void determineWhoseTurn(){
+        if (whoseTurn.equalsIgnoreCase("X")){
+            whoseTurn = "O";
+        }
+        else {
+            whoseTurn = "X";        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,6 +77,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_1.setLayout(new java.awt.BorderLayout());
+
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel_1.add(jButton1, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_1);
@@ -74,6 +91,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_2.setLayout(new java.awt.BorderLayout());
+
+        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel_2.add(jButton2, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_2);
@@ -81,6 +105,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_3.setLayout(new java.awt.BorderLayout());
+
+        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel_3.add(jButton3, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_3);
@@ -88,6 +119,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_4.setLayout(new java.awt.BorderLayout());
+
+        jButton4.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel_4.add(jButton4, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_4);
@@ -95,6 +133,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_5.setLayout(new java.awt.BorderLayout());
+
+        jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel_5.add(jButton5, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_5);
@@ -102,6 +147,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_6.setLayout(new java.awt.BorderLayout());
+
+        jButton6.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel_6.add(jButton6, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_6);
@@ -109,6 +161,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_8.setLayout(new java.awt.BorderLayout());
+
+        jButton7.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel_8.add(jButton7, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_8);
@@ -116,6 +175,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_7.setLayout(new java.awt.BorderLayout());
+
+        jButton8.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel_7.add(jButton8, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_7);
@@ -123,6 +189,13 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel_9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel_9.setLayout(new java.awt.BorderLayout());
+
+        jButton9.setFont(new java.awt.Font("Lucida Grande", 1, 100)); // NOI18N
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jPanel_9.add(jButton9, java.awt.BorderLayout.CENTER);
 
         jPanel_GridHolder.add(jPanel_9);
@@ -134,6 +207,96 @@ public class TicTacToe extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jButton1.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton1.setForeground(Color.red);
+       } else {
+           jButton1.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jButton2.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton2.setForeground(Color.red);
+       } else {
+           jButton2.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jButton3.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton3.setForeground(Color.red);
+       } else {
+           jButton3.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jButton4.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton4.setForeground(Color.red);
+       } else {
+           jButton4.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        jButton5.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton5.setForeground(Color.red);
+       } else {
+           jButton5.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jButton6.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton6.setForeground(Color.red);
+       } else {
+           jButton6.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        jButton7.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton7.setForeground(Color.red);
+       } else {
+           jButton7.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jButton8.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton8.setForeground(Color.red);
+       } else {
+           jButton8.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        jButton9.setText(whoseTurn);
+       if(whoseTurn.equalsIgnoreCase("X")){
+           jButton9.setForeground(Color.red);
+       } else {
+           jButton9.setForeground(Color.blue);
+       }
+       determineWhoseTurn();
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
