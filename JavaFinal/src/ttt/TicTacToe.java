@@ -17,11 +17,15 @@ public class TicTacToe extends javax.swing.JFrame {
     private String whoseTurn = "X";
     private String playerOne = "Player One";
     private String playerTwo = "Player Two";
+    private String playersTurn = "";
+    private int playerOneCount = 0;
+    private int playerTwoCount = 0;
     
     public TicTacToe() {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
+        getPlayerNames();
     }
     
 private void determineWhoseTurn(){
@@ -32,12 +36,43 @@ private void determineWhoseTurn(){
             whoseTurn = "X";        }
     }
 
+    private void setPlayerName() {
+                
+        if(whoseTurn.equalsIgnoreCase("X")){
+            playersTurn = playerOne;
+        } else {
+            playersTurn = playerTwo;
+        }
+        jLabel_Score.setText(playerOne + "'s Score is: " + 
+                String.valueOf(playerOneCount) +  "\t      " + playersTurn 
+                + "'s move       "+ playerTwo + 
+                "'s Score is: " + String.valueOf(playerTwoCount));
+    }
+    
+    private void getPlayerNames() {
+        playerOne = JOptionPane.showInputDialog(this, 
+                "Player one name:", 
+                "Player name", 
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        playerTwo = JOptionPane.showInputDialog(this, 
+                "Player two name:", 
+                "Player name", 
+                JOptionPane.INFORMATION_MESSAGE);
+        if(playerOne.equals("")){
+            playerOne = "Player one";
+        }
+        if(playerTwo.equals("")){
+            playerTwo = "Player two";
+        }        
+    }
+
     private void xWins(){
         JOptionPane.showMessageDialog(this, 
                 playerOne + " wins", 
                 "Winner", 
                 JOptionPane.INFORMATION_MESSAGE);
-        
+        resetGame();
     }
     
     private void oWins() {
@@ -45,6 +80,19 @@ private void determineWhoseTurn(){
                 playerTwo + " wins", 
                 "Winner", 
                 JOptionPane.INFORMATION_MESSAGE);
+        resetGame();
+    }
+    
+    private void resetGame() {
+        jButton1.setText("");
+        jButton2.setText("");
+        jButton3.setText("");
+        jButton4.setText("");
+        jButton5.setText("");
+        jButton6.setText("");
+        jButton7.setText("");
+        jButton8.setText("");
+        jButton9.setText("");
         
     }
 
@@ -120,7 +168,7 @@ private void determineIfWin() {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel_Score = new javax.swing.JLabel();
         jPanel_GridHolder = new javax.swing.JPanel();
         jPanel_1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -148,8 +196,10 @@ private void determineIfWin() {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("Place Holder");
-        jPanel1.add(jLabel1, java.awt.BorderLayout.PAGE_END);
+        jLabel_Score.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel_Score.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel_Score.setText("Place Holder");
+        jPanel1.add(jLabel_Score, java.awt.BorderLayout.PAGE_END);
 
         jPanel_GridHolder.setBackground(new java.awt.Color(204, 204, 204));
         jPanel_GridHolder.setLayout(new java.awt.GridLayout(3, 3, 1, 1));
@@ -296,6 +346,7 @@ private void determineIfWin() {
            jButton1.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -306,6 +357,7 @@ private void determineIfWin() {
            jButton2.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -316,6 +368,7 @@ private void determineIfWin() {
            jButton3.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -326,6 +379,7 @@ private void determineIfWin() {
            jButton4.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -336,6 +390,7 @@ private void determineIfWin() {
            jButton5.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -346,6 +401,7 @@ private void determineIfWin() {
            jButton6.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -356,6 +412,7 @@ private void determineIfWin() {
            jButton7.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -366,6 +423,7 @@ private void determineIfWin() {
            jButton8.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -376,6 +434,7 @@ private void determineIfWin() {
            jButton9.setForeground(Color.blue);
        }
        determineWhoseTurn();
+       determineIfWin();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
@@ -423,7 +482,7 @@ private void determineIfWin() {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel_Score;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_1;
     private javax.swing.JPanel jPanel_2;
