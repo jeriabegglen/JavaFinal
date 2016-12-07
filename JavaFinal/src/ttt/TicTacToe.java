@@ -17,26 +17,52 @@ public class TicTacToe extends javax.swing.JFrame {
     private String whoseTurn = "X";
     private String playerOne = "Player One";
     private String playerTwo = "Player Two";
-    private String playersTurn = "";
     private int playerOneCount = 0;
     private int playerTwoCount = 0;
+    private String playersTurn = "";
+    private String catGame = "Cat";
+    private int catWinCount = 0;
     
     public TicTacToe() {
         initComponents();
         setSize(600, 600);
         setLocationRelativeTo(null);
         getPlayerNames();
+        setPlayerName();
         setScore();
     }
     
-    private void determineWhoseTurn(){
-        if (whoseTurn.equalsIgnoreCase("X")){
-            whoseTurn = "O";
+    private void tieGame(){
+        String one = jButton1.getText();
+        String two = jButton2.getText();
+        String three = jButton3.getText();
+        String four = jButton4.getText();
+        String five = jButton5.getText();
+        String six = jButton6.getText();
+        String seven = jButton7.getText();
+        String eight = jButton8.getText();
+        String nine = jButton9.getText();
+        
+        if(one != "" && two != "" && three != "" && four != "" && five != ""
+                && six != "" && seven != "" && eight != "" && nine != ""){
+            JOptionPane.showMessageDialog(this,
+                    "Game is a tie!",
+                    "Tie Game",
+                    JOptionPane.INFORMATION_MESSAGE);
+            catWinCount++;
+            resetGame();    
         }
-        else {
-            whoseTurn = "X";        }
+        
     }
-
+    
+    private void setScore(){
+        jLabel_Score.setText(playerOne + "'s Score is: " + 
+                String.valueOf(playerOneCount) +  "\t      " + playersTurn 
+                + "'s move       "+ playerTwo + 
+                "'s Score is: " + String.valueOf(playerTwoCount)+ "    Cat's Score: " 
+                + String.valueOf(catWinCount));
+    }
+    
     private void setPlayerName() {
                 
         if(whoseTurn.equalsIgnoreCase("X")){
@@ -47,7 +73,8 @@ public class TicTacToe extends javax.swing.JFrame {
         jLabel_Score.setText(playerOne + "'s Score is: " + 
                 String.valueOf(playerOneCount) +  "\t      " + playersTurn 
                 + "'s move       "+ playerTwo + 
-                "'s Score is: " + String.valueOf(playerTwoCount));
+                "'s Score is: " + String.valueOf(playerTwoCount) + "    Cat's Score: " 
+                + String.valueOf(catWinCount));
     }
     
     private void getPlayerNames() {
@@ -68,20 +95,22 @@ public class TicTacToe extends javax.swing.JFrame {
         }        
     }
     
-    private void setScore(){
-        jLabel_Score.setText(playerOne + "'s Score is: " + 
-                String.valueOf(playerOneCount) +  "\t      " + playersTurn 
-                + "'s move       "+ playerTwo + 
-                "'s Score is: " + String.valueOf(playerTwoCount));
+    private void determineWhoseTurn(){
+        if (whoseTurn.equalsIgnoreCase("X")){
+            whoseTurn = "O";
+        }
+        else {
+            whoseTurn = "X";        }
     }
-
-    private void xWins(){
+    
+    private void xWins() {
         JOptionPane.showMessageDialog(this, 
                 playerOne + " wins", 
                 "Winner", 
                 JOptionPane.INFORMATION_MESSAGE);
         playerOneCount++;
         resetGame();
+        
     }
     
     private void oWins() {
@@ -91,27 +120,6 @@ public class TicTacToe extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE);
         playerTwoCount++;
         resetGame();
-    }
-    
-    private void tieGame(){
-        String one = jButton1.getText();
-        String two = jButton2.getText();
-        String three = jButton3.getText();
-        String four = jButton4.getText();
-        String five = jButton5.getText();
-        String six = jButton6.getText();
-        String seven = jButton7.getText();
-        String eight = jButton8.getText();
-        String nine = jButton9.getText();
-        
-        if(one != "" && two != "" && three != "" && four != "" && five != ""
-                && six != "" && seven != "" && eight != "" && nine != ""){
-            JOptionPane.showMessageDialog(this,
-                    "Game is a tie!",
-                    "Tie Game",
-                    JOptionPane.INFORMATION_MESSAGE);
-        resetGame();    
-        }
         
     }
     
@@ -125,10 +133,10 @@ public class TicTacToe extends javax.swing.JFrame {
         jButton7.setText("");
         jButton8.setText("");
         jButton9.setText("");
-        
+        setScore();
     }
-
-private void determineIfWin() {
+    
+    private void determineIfWin() {
         String one = jButton1.getText();
         String two = jButton2.getText();
         String three = jButton3.getText();
@@ -230,6 +238,7 @@ private void determineIfWin() {
 
         jLabel_Score.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_Score.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel_Score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_Score.setText("Place Holder");
         jPanel1.add(jLabel_Score, java.awt.BorderLayout.PAGE_END);
 
@@ -379,6 +388,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -390,6 +401,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -401,6 +414,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -412,6 +427,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -423,6 +440,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -434,6 +453,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -445,6 +466,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -456,6 +479,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -467,6 +492,8 @@ private void determineIfWin() {
        }
        determineWhoseTurn();
        determineIfWin();
+       tieGame();
+       setPlayerName();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
