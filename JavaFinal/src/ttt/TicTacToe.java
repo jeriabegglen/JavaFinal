@@ -26,9 +26,10 @@ public class TicTacToe extends javax.swing.JFrame {
         setSize(600, 600);
         setLocationRelativeTo(null);
         getPlayerNames();
+        setScore();
     }
     
-private void determineWhoseTurn(){
+    private void determineWhoseTurn(){
         if (whoseTurn.equalsIgnoreCase("X")){
             whoseTurn = "O";
         }
@@ -66,12 +67,20 @@ private void determineWhoseTurn(){
             playerTwo = "Player two";
         }        
     }
+    
+    private void setScore(){
+        jLabel_Score.setText(playerOne + "'s Score is: " + 
+                String.valueOf(playerOneCount) +  "\t      " + playersTurn 
+                + "'s move       "+ playerTwo + 
+                "'s Score is: " + String.valueOf(playerTwoCount));
+    }
 
     private void xWins(){
         JOptionPane.showMessageDialog(this, 
                 playerOne + " wins", 
                 "Winner", 
                 JOptionPane.INFORMATION_MESSAGE);
+        playerOneCount++;
         resetGame();
     }
     
@@ -80,7 +89,30 @@ private void determineWhoseTurn(){
                 playerTwo + " wins", 
                 "Winner", 
                 JOptionPane.INFORMATION_MESSAGE);
+        playerTwoCount++;
         resetGame();
+    }
+    
+    private void tieGame(){
+        String one = jButton1.getText();
+        String two = jButton2.getText();
+        String three = jButton3.getText();
+        String four = jButton4.getText();
+        String five = jButton5.getText();
+        String six = jButton6.getText();
+        String seven = jButton7.getText();
+        String eight = jButton8.getText();
+        String nine = jButton9.getText();
+        
+        if(one != "" && two != "" && three != "" && four != "" && five != ""
+                && six != "" && seven != "" && eight != "" && nine != ""){
+            JOptionPane.showMessageDialog(this,
+                    "Game is a tie!",
+                    "Tie Game",
+                    JOptionPane.INFORMATION_MESSAGE);
+        resetGame();    
+        }
+        
     }
     
     private void resetGame() {
