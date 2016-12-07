@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 public class TicTacToe extends javax.swing.JFrame {
 
     private String whoseTurn = "X";
+    private String playerOne = "Player One";
+    private String playerTwo = "Player Two";
     
     public TicTacToe() {
         initComponents();
@@ -28,6 +30,84 @@ private void determineWhoseTurn(){
         }
         else {
             whoseTurn = "X";        }
+    }
+
+    private void xWins(){
+        JOptionPane.showMessageDialog(this, 
+                playerOne + " wins", 
+                "Winner", 
+                JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
+    private void oWins() {
+        JOptionPane.showMessageDialog(this, 
+                playerTwo + " wins", 
+                "Winner", 
+                JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+
+private void determineIfWin() {
+        String one = jButton1.getText();
+        String two = jButton2.getText();
+        String three = jButton3.getText();
+        String four = jButton4.getText();
+        String five = jButton5.getText();
+        String six = jButton6.getText();
+        String seven = jButton7.getText();
+        String eight = jButton8.getText();
+        String nine = jButton9.getText();
+        
+        if (one == "X" && two == "X" && three == "X"){
+            xWins();
+        }
+        if (four == "X" && five == "X" && six == "X"){
+            xWins();
+        }
+        if (seven == "X" && eight == "X" && nine == "X"){
+            xWins();
+        }
+        if (one == "X" && four == "X" && seven == "X"){
+            xWins();
+        }
+        if (two == "X" && five == "X" && eight == "X"){
+            xWins();
+        }
+        if (three == "X" && six == "X" && nine == "X"){
+            xWins();
+        }
+        if (one == "X" && five == "X" && nine == "X"){
+            xWins();
+        }
+        if (three == "X" && five == "X" && seven == "X"){
+            xWins();
+        }
+        
+        if (one == "O" && two == "O" && three == "O"){
+            oWins();
+        }
+        if (four == "O" && five == "O" && six == "O"){
+            oWins();
+        }
+        if (seven == "O" && eight == "O" && nine == "O"){
+            oWins();
+        }
+        if (one == "O" && four == "O" && seven == "O"){
+            oWins();
+        }
+        if (two == "O" && five == "O" && eight == "O"){
+            oWins();
+        }
+        if (three == "O" && six == "O" && nine == "O"){
+            oWins();
+        }
+        if (one == "O" && five == "O" && nine == "O"){
+            oWins();
+        }
+        if (three == "O" && five == "O" && seven == "O"){
+            oWins();
+        }
     }
     
     /**
