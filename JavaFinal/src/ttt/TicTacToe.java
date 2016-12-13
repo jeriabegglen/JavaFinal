@@ -23,6 +23,8 @@ public class TicTacToe extends javax.swing.JFrame {
     private String catGame = "Cat";
     private int catWinCount = 0;
     
+    
+    
     public TicTacToe() {
         initComponents();
         setSize(600, 600);
